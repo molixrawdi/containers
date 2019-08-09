@@ -33,6 +33,9 @@ Vagrant.configure("2") do |config|
    sudo apt-get -y update 
    sudo apt-get -y install docker-ce
    apt-cache madison docker-ce
+   sudo echo "10.0.0.10       master" >> /etc/hosts
+   sudo echo "10.0.0.11       node1"  >> /etc/hosts
+   sudo echo "10.0.0.12       node2"  >> /etc/hosts
   SHELL
   config.vm.provider :virtualbox do |vb|
   vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
