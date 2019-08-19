@@ -40,11 +40,10 @@ Vagrant.configure("2") do |config|
    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
    sudo apt-get -y update 
-   sudo apt-get -y install docker-ce
+   sudo apt-get -y install docker-ce=18.09.1~3-0~ubuntu-xenial
    apt-cache madison docker-ce
    sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
    sudo apt-add-repository "deb https://apt.kubernetes.io/ kubernetes-xenial main"
-   sudo apt-get -y  update
    sudo apt-get install -y kubelet kubeadm kubectl
    sudo apt-mark hold kubelet kubeadm kubectl
    sudo swapoff -a
