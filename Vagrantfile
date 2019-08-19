@@ -7,7 +7,8 @@ Vagrant.configure("2") do |config|
 
   end
   config.vm.define "master" do |subconfig|
-    subconfig.vm.box = "bento/ubuntu-18.04"
+    subconfig.vm.box = "hashicorp/bionic64"
+    subconfig.vm.box_version = "1.0.282" 
     subconfig.vm.hostname = "master"
     subconfig.vm.network :private_network, ip: "10.0.0.10"
     subconfig.vm.provision "shell", inline: <<-SHELLMASTER
@@ -19,14 +20,16 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "node1" do |subconfig|
-    subconfig.vm.box = "bento/ubuntu-18.04"
+    subconfig.vm.box = "hashicorp/bionic64"
+    subconfig.vm.box_version = "1.0.282"
     subconfig.vm.hostname = "node1"
     subconfig.vm.network :private_network, ip: "10.0.0.11"
 
   end
 
   config.vm.define "node2" do |subconfig|
-    subconfig.vm.box = "bento/ubuntu-18.04"
+    subconfig.vm.box = "hashicorp/bionic64"
+    subconfig.vm.box_version = "1.0.282"
     subconfig.vm.hostname = "node2"
     subconfig.vm.network :private_network, ip: "10.0.0.12"
   end
