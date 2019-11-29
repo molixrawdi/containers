@@ -45,6 +45,7 @@ Vagrant.configure("2") do |config|
    sudo apt-get -y install docker-ce=5:18.09.8~3-0~ubuntu-bionic docker-ce-cli=5:18.09.8~3-0~ubuntu-bionic
    apt-cache madison docker-ce
    sudo dockerd --exec-opt native.cgroupdriver=systemd
+   sudo apt -y install docker-compose
    sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
    sudo apt-add-repository "deb https://apt.kubernetes.io/ kubernetes-xenial main"
    sudo apt-get install -y kubelet kubeadm kubectl
