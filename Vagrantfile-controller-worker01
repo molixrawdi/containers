@@ -1,0 +1,20 @@
+Vagrant.configure("2") do |config|
+  config.ssh.insert_key = false
+  config.vm.define "k8s-controller" do |k8s-controller|
+    k8s-controller.vm.box = "ubuntu/bionic64"
+  end
+  config.vm.define "worker01" do |worker01
+    worker.vm,box = "ubuntu/bionic64"
+  end
+  config.vm.network "public_network"
+  config.vm.disk : disk, size: "100GB", primary: true
+  config.mv.provider "virtualbox" do |vb|
+    vb.memory = "4096"
+    vb.cpus = "3"
+
+  end
+
+end
+
+
+  
